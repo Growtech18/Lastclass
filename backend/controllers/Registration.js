@@ -15,7 +15,7 @@ exports.Registration = async (req, res) => {
         }
         console.log(Name, email, password)
         // check email in db 
-        const isUser = await User.findOne({ email });
+        const isUser = await User.findOne(email);
         if (isUser) {
             return res.status(400).json({
                 success: false,
@@ -61,4 +61,5 @@ exports.Registration = async (req, res) => {
         })
     }
 }
+
 
